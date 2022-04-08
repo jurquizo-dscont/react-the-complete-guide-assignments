@@ -9,8 +9,6 @@ export default function Expenses({ items }) {
 
     const filterChangeHandler = e => {
         setFilter(e.target.value);
-        console.log("hello from expenses")
-        console.log(e.target.value)
     };
 
     if (items && items.length > 0) {
@@ -18,7 +16,7 @@ export default function Expenses({ items }) {
             <div>
                 <Card className="expenses">
                     <ExpensesFilter filter={filter} onFilterChange={filterChangeHandler} />
-                    {items.map(
+                    {items.filter(item => item.date.getFullYear() == filter).map(
                         item => <ExpenseItem
                             key={item.id}
                             title={item.title}
