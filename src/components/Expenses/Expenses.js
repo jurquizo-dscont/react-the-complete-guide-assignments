@@ -9,8 +9,6 @@ export default function Expenses({ items }) {
 
     const filterChangeHandler = e => {
         setFilter(e.target.value);
-        console.log("hello from expenses")
-        console.log(e.target.value)
     };
 
     if (items && items.length > 0) {
