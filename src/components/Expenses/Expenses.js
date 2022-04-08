@@ -16,7 +16,7 @@ export default function Expenses({ items }) {
             <div>
                 <Card className="expenses">
                     <ExpensesFilter filter={filter} onFilterChange={filterChangeHandler} />
-                    {items.map(
+                    {items.filter(item => item.date.getFullYear() == filter).map(
                         item => <ExpenseItem
                             key={item.id}
                             title={item.title}
